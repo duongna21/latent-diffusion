@@ -716,6 +716,7 @@ class UNetModel(nn.Module):
         :param y: an [N] Tensor of labels, if class-conditional.
         :return: an [N x C x ...] Tensor of outputs.
         """
+        print(f'unet input: {x.shape}')
         assert (y is not None) == (
             self.num_classes is not None
         ), "must specify y if and only if the model is class-conditional"
@@ -942,7 +943,6 @@ class EncoderUNetModel(nn.Module):
         :param timesteps: a 1-D batch of timesteps.
         :return: an [N x K] Tensor of outputs.
         """
-        print(f'unet input: {x.shape}')
         emb = self.time_embed(timestep_embedding(timesteps, self.model_channels))
 
         results = []
