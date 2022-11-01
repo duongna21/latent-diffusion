@@ -254,6 +254,7 @@ def make_convolutional_sample(batch, model, mode="vanilla", custom_steps=None, e
                                                 temperature=temperature, noise_dropout=noise_dropout,
                                                 score_corrector=corrector, corrector_kwargs=corrector_kwargs,
                                                 x_T=x_T, log_every_t=log_every_t)
+        print('sample, intermediates: ', sample, intermediates)
         t1 = time.time()
 
         if ddim_use_x0_pred:
