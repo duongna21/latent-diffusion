@@ -168,7 +168,6 @@ class DDIMSampler(object):
         b, *_, device = *x.shape, x.device
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
-            print(f'\nx, c: {x.shape}, {c[0].shape}')
             e_t = self.model.apply_model(x, t, c)
         else:
             x_in = torch.cat([x] * 2)
