@@ -991,7 +991,7 @@ class LatentDiffusion(DDPM):
         else:
             print(f'\nx_noisy, cond: {x_noisy.shape}, {cond[0].shape}')
             x_recon = self.model(x_noisy, t, **cond)
-
+        print(f'x_recon: {x_recon.shape}')
         if isinstance(x_recon, tuple) and not return_ids:
             return x_recon[0]
         else:
