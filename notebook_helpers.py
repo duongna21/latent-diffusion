@@ -220,6 +220,8 @@ def make_convolutional_sample(batch, model, mode="vanilla", custom_steps=None, e
                                                             and model.cond_stage_key == 'coordinates_bbox'),
                                         return_original_cond=True)
     print('z, c, x, xrec, xc shape: ', z.shape, c.shape, x.shape, xrec.shape, xc.shape)
+    print('z, c, x, xrec, xc shape: ', z.shape, c.shape, x.shape, xrec.shape, xc.shape)
+
 
     log_every_t = 1 if save_intermediate_vid else None
 
@@ -254,7 +256,6 @@ def make_convolutional_sample(batch, model, mode="vanilla", custom_steps=None, e
                                                 temperature=temperature, noise_dropout=noise_dropout,
                                                 score_corrector=corrector, corrector_kwargs=corrector_kwargs,
                                                 x_T=x_T, log_every_t=log_every_t)
-        print('sample, intermediates: ', sample, intermediates)
         t1 = time.time()
 
         if ddim_use_x0_pred:
