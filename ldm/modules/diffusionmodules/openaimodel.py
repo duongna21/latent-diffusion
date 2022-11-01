@@ -737,11 +737,11 @@ class UNetModel(nn.Module):
             h = th.cat([h, hs.pop()], dim=1)
             h = module(h, emb, context)
         h = h.type(x.dtype)
+        out = self.out(h)
+        print(f'\nunet input: {out.shape}')
         if self.predict_codebook_ids:
             return self.id_predictor(h)
         else:
-            out = self.out(h)
-            print(f'\nunet input: {out.shape}')
             return out
 
 
