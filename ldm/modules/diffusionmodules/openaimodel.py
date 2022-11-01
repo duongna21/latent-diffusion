@@ -740,7 +740,9 @@ class UNetModel(nn.Module):
         if self.predict_codebook_ids:
             return self.id_predictor(h)
         else:
-            return self.out(h)
+            out = self.out(h)
+            print(f'\nunet input: {out.shape}')
+            return out
 
 
 class EncoderUNetModel(nn.Module):
