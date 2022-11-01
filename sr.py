@@ -5,5 +5,4 @@ from notebook_helpers import get_model
 model = get_model('superresolution')
 
 custom_steps = 100
-cond_choice_path = os.path.join(dir, )
 logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
