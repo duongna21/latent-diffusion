@@ -10,6 +10,10 @@ from PIL import Image
 from numpy import asarray
 from einops import rearrange, repeat
 import torch, torchvision
+import importlib
+
+from ldm.models.diffusion import ddim
+importlib.reload(ddim)
 from ldm.models.diffusion.ddim import DDIMSampler
 from ldm.util import ismap
 import time
