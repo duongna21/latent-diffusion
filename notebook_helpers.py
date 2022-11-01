@@ -134,6 +134,7 @@ def visualize_cond_img(path):
 def run(model, selected_path, task, custom_steps, resize_enabled=False, classifier_ckpt=None, global_step=None):
 
     example = get_cond(task, selected_path)
+    print(example)
 
     save_intermediate_vid = False
     n_runs = 1
