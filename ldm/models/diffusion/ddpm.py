@@ -904,7 +904,7 @@ class LatentDiffusion(DDPM):
             cond = {key: cond}
 
         if hasattr(self, "split_input_params"):
-            print(f'\nhas split_input_params x_noisy, cond: {x_noisy.shape}, {cond["c_concat"].shape}')
+            print(f'\nhas split_input_params x_noisy, cond: {x_noisy.shape}, {cond["c_concat"][0].shape}')
             assert len(cond) == 1  # todo can only deal with one conditioning atm
             assert not return_ids  
             ks = self.split_input_params["ks"]  # eg. (128, 128)
