@@ -206,6 +206,7 @@ def convsample_ddim(model, cond, steps, shape, eta=1.0, callback=None, normals_s
                                          mask=mask, x0=x0, temperature=temperature, verbose=False,
                                          score_corrector=score_corrector,
                                          corrector_kwargs=corrector_kwargs, x_T=x_T)
+    print(f'\nsamples: {samples.shape}')
 
     return samples, intermediates
 
