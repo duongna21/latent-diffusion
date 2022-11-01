@@ -145,7 +145,6 @@ class DDIMSampler(object):
                 assert x0 is not None
                 img_orig = self.model.q_sample(x0, ts)  # TODO: deterministic forward pass?
                 img = img_orig * mask + (1. - mask) * img
-            print(f'img, cond: {img.shape}, {cond[0].shape}')
             outs = self.p_sample_ddim(img, cond, ts, index=index, use_original_steps=ddim_use_original_steps,
                                       quantize_denoised=quantize_denoised, temperature=temperature,
                                       noise_dropout=noise_dropout, score_corrector=score_corrector,
@@ -169,6 +168,7 @@ class DDIMSampler(object):
         b, *_, device = *x.shape, x.device
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
+            print(f'\nx, c: {x.shape}, {c[0].shape}')
             e_t = self.model.apply_model(x, t, c)
         else:
             x_in = torch.cat([x] * 2)
