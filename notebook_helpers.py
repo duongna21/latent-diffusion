@@ -130,6 +130,7 @@ def get_cond(mode, selected_path):
 
 
 def visualize_cond_img(path):
+    return
     display(ipyimg(filename=path))
 
 
