@@ -10,8 +10,8 @@ model = get_model('superresolution')
 # print('model: ', model)
 
 custom_steps = 100
-# logs = run(model["model"], 'data/example_conditioning/superresolution/celeb64.png', 'superresolution', custom_steps)
-logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
+logs = run(model["model"], 'data/example_conditioning/superresolution/celeb64.png', 'superresolution', custom_steps)
+# logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
 
 sample = logs["sample"]
 sample = sample.detach().cpu()
