@@ -164,6 +164,7 @@ class DDIMSampler(object):
                 intermediates['x_inter'].append(img)
                 intermediates['pred_x0'].append(pred_x0)
         print(f'\nz_0 after 100 step: {img}')
+        torch.save(img, 'z0.pt')
 
         return img, intermediates
 
