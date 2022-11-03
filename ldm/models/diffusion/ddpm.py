@@ -659,8 +659,9 @@ class LatentDiffusion(DDPM):
         x = x.to(self.device)
         print(f'x shape: {x.shape}')
         encoder_posterior = self.encode_first_stage(x)
+        print(f'\nencoder_posterior: {encoder_posterior}')
         z = self.get_first_stage_encoding(encoder_posterior).detach()
-        print(f'\nencode: {z}')
+        print(f'\nz: {z}')
 
         if self.model.conditioning_key is not None:
             if cond_key is None:
