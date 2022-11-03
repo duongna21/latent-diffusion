@@ -174,10 +174,10 @@ class DDIMSampler(object):
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
             e_t = self.model.apply_model(x, t, c)
-            print(f'\nx: {x}')
-            print(f'\nt: {t}')
-            print(f'\nc: {c}')
-            print(f'\ne_t: {e_t}')
+            # print(f'\nx: {x}')
+            # print(f'\nt: {t}')
+            # print(f'\nc: {c}')
+            # print(f'\ne_t: {e_t}')
         else:
             x_in = torch.cat([x] * 2)
             t_in = torch.cat([t] * 2)
@@ -209,4 +209,5 @@ class DDIMSampler(object):
         if noise_dropout > 0.:
             noise = torch.nn.functional.dropout(noise, p=noise_dropout)
         x_prev = a_prev.sqrt() * pred_x0 + dir_xt + noise
+        print(f'prev_sample: {x_prev}')
         return x_prev, pred_x0
