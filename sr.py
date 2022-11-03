@@ -15,6 +15,7 @@ logs = run(model["model"], 'data/example_conditioning/superresolution/celeb128.j
 # logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
 
 sample = logs["sample"]
+print('sample: ', sample)
 sample = sample.detach().cpu()
 sample = torch.clamp(sample, -1., 1.)
 sample = (sample + 1.) / 2. * 255
