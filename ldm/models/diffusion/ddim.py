@@ -122,7 +122,7 @@ class DDIMSampler(object):
             generator = torch.Generator(device='cuda')
             generator.manual_seed(0)
             img = torch.randn(shape, device=device, generator=generator)
-            print('img: ', img)
+            # print('img: ', img)
         else:
             img = x_T
         print(f'\nimg: {img.shape}')
@@ -174,6 +174,9 @@ class DDIMSampler(object):
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
             e_t = self.model.apply_model(x, t, c)
+            print(f'\nx: {x}')
+            print(f'\nt: {t}')
+            print(f'\nc: {c}')
             print(f'\ne_t: {e_t}')
         else:
             x_in = torch.cat([x] * 2)
