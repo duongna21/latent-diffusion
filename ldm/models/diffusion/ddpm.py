@@ -1410,6 +1410,8 @@ class DiffusionWrapper(pl.LightningModule):
         if self.conditioning_key is None:
             out = self.diffusion_model(x, t)
         elif self.conditioning_key == 'concat':
+            print(x)
+            print(c_concat)
             xc = torch.cat([x] + c_concat, dim=1)
             out = self.diffusion_model(xc, t)
         elif self.conditioning_key == 'crossattn':
