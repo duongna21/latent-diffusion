@@ -163,7 +163,7 @@ class DDIMSampler(object):
             if index % log_every_t == 0 or index == total_steps - 1:
                 intermediates['x_inter'].append(img)
                 intermediates['pred_x0'].append(pred_x0)
-        print(f'\nz_0 after 100 step: {img}')
+        print(f'\nz_0: {img}')
         torch.save(img, 'z0.pt')
 
         return img, intermediates
