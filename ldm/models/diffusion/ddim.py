@@ -170,6 +170,7 @@ class DDIMSampler(object):
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
             e_t = self.model.apply_model(x, t, c)
+            print(f'\ne_t: {e_t}')
         else:
             x_in = torch.cat([x] * 2)
             t_in = torch.cat([t] * 2)
