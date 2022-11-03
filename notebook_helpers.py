@@ -250,20 +250,20 @@ def make_convolutional_sample(batch, model, mode="vanilla", custom_steps=None, e
             if model.cond_stage_key =='class_label':
                 log[model.cond_stage_key] = xc[model.cond_stage_key]
 
-    with model.ema_scope("Plotting"):
-        t0 = time.time()
-        img_cb = None
+    # with model.ema_scope("Plotting"):
+    t0 = time.time()
+    img_cb = None
 
-        sample, intermediates = convsample_ddim(model, c, steps=custom_steps, shape=z.shape,
-                                                eta=eta,
-                                                quantize_x0=quantize_x0, img_callback=img_cb, mask=None, x0=z0,
-                                                temperature=temperature, noise_dropout=noise_dropout,
-                                                score_corrector=corrector, corrector_kwargs=corrector_kwargs,
-                                                x_T=x_T, log_every_t=log_every_t)
-        t1 = time.time()
+    sample, intermediates = convsample_ddim(model, c, steps=custom_steps, shape=z.shape,
+                                            eta=eta,
+                                            quantize_x0=quantize_x0, img_callback=img_cb, mask=None, x0=z0,
+                                            temperature=temperature, noise_dropout=noise_dropout,
+                                            score_corrector=corrector, corrector_kwargs=corrector_kwargs,
+                                            x_T=x_T, log_every_t=log_every_t)
+    t1 = time.time()
 
-        if ddim_use_x0_pred:
-            sample = intermediates['pred_x0'][-1]
+    if ddim_use_x0_pred:
+        sample = intermediates['pred_x0'][-1]
 
     x_sample = model.decode_first_stage(sample)
     print(f'\ndecode_first_stage: {x_sample.shape}')
