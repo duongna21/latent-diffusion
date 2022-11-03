@@ -124,6 +124,7 @@ def get_cond(mode, selected_path):
 
         c = c.to(torch.device("cuda"))
         example["LR_image"] = c
+        print(f"LR_image: {example['LR_image']}")
         example["image"] = c_up
 
     return example
