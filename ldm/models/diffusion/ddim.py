@@ -122,6 +122,7 @@ class DDIMSampler(object):
             generator = torch.Generator(device='cuda')
             generator.manual_seed(0)
             img = torch.randn(shape, device=device, generator=generator)
+            print('img: ', img)
         else:
             img = x_T
         print(f'\nimg: {img.shape}')
