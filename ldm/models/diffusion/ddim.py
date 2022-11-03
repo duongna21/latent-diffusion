@@ -119,9 +119,10 @@ class DDIMSampler(object):
         device = self.model.betas.device
         b = shape[0]
         if x_T is None:
-            generator = torch.Generator(device='cuda')
+            generator = torch.Generator(device='cpu')
             generator.manual_seed(0)
-            img = torch.randn(shape, device=device, generator=generator)
+            img = torch.randn(shape, generator=generator)
+            img = img.to(device)
         else:
             img = x_T
         print(f'\nimg: {img.shape}')
