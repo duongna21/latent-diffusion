@@ -147,7 +147,7 @@ def run(model, selected_path, task, custom_steps, resize_enabled=False, classifi
     mode = 'ddim'
     ddim_use_x0_pred = False
     temperature = 1.
-    eta = 1.
+    eta = 0.
     make_progrow = True
     custom_shape = None
 
@@ -207,7 +207,7 @@ def convsample_ddim(model, cond, steps, shape, eta=1.0, callback=None, normals_s
                                          mask=mask, x0=x0, temperature=temperature, verbose=False,
                                          score_corrector=score_corrector,
                                          corrector_kwargs=corrector_kwargs, x_T=x_T)
-    print(f'\nsamples: {samples.shape}')
+    print(f'\nprev samples: {samples.shape}')
 
     return samples, intermediates
 
