@@ -162,13 +162,13 @@ def timestep_embedding(timesteps, dim, max_period=10000, repeat_only=False):
         freqs = torch.exp(
             -math.log(max_period) * torch.arange(start=0, end=half, dtype=torch.float32) / half
         ).to(device=timesteps.device)
-        print(f'exponent: {freqs}')
+        # print(f'exponent: {freqs}')
         args = timesteps[:, None].float() * freqs[None]
         embedding = torch.cat([torch.cos(args), torch.sin(args)], dim=-1)
-        print(f'\nafter concat: {embedding}')
+        # print(f'\nafter concat: {embedding}')
         if dim % 2:
             embedding = torch.cat([embedding, torch.zeros_like(embedding[:, :1])], dim=-1)
-        print(f'\nfinal: {embedding}')
+        # print(f'\nfinal: {embedding}')
     else:
         embedding = repeat(timesteps, 'b -> b d', d=dim)
     return embedding
