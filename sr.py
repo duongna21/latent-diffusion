@@ -9,7 +9,7 @@ from notebook_helpers import get_model
 model = get_model('superresolution')
 # print('model: ', model)
 
-custom_steps = 2
+custom_steps = 1
 # logs = run(model["model"], 'data/example_conditioning/superresolution/celeb64.png', 'superresolution', custom_steps)
 logs = run(model["model"], 'data/example_conditioning/superresolution/celeb128.jpg', 'superresolution', custom_steps)
 # logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
