@@ -158,11 +158,12 @@ class DDIMSampler(object):
             img, pred_x0 = outs
             if callback: callback(i)
             if img_callback: img_callback(pred_x0, i)
-            break
+            # break
 
             if index % log_every_t == 0 or index == total_steps - 1:
                 intermediates['x_inter'].append(img)
                 intermediates['pred_x0'].append(pred_x0)
+        print(f'\nz_0 after 100 step: {img}')
 
         return img, intermediates
 
@@ -174,10 +175,10 @@ class DDIMSampler(object):
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
             e_t = self.model.apply_model(x, t, c)
-            print(f'\nlatents: {x}')
-            print(f'\nt: {t}')
-            print(f'\nc: {c}')
-            print(f'\ne_t: {e_t}')
+            # print(f'\nlatents: {x}')
+            # print(f'\nt: {t}')
+            # print(f'\nc: {c}')
+            # print(f'\ne_t: {e_t}')
 
         else:
             x_in = torch.cat([x] * 2)
@@ -210,5 +211,5 @@ class DDIMSampler(object):
         if noise_dropout > 0.:
             noise = torch.nn.functional.dropout(noise, p=noise_dropout)
         x_prev = a_prev.sqrt() * pred_x0 + dir_xt + noise
-        print(f'prev_sample: {x_prev}')
+        # print(f'prev_sample: {x_prev}')
         return x_prev, pred_x0
