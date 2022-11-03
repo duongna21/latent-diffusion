@@ -745,7 +745,7 @@ class UNetModel(nn.Module):
         print(f'\nafter_upblock: {h[0][0][0][:5]}')
         h = h.type(x.dtype)
         out = self.out(h)
-        print(f'\nafter_convout: {h[0][0][0][:5]}')
+        print(f'\nafter_convout: {out[0][0][0][:5]}')
         # print(f'unet output: {out.shape}')
         if self.predict_codebook_ids:
             return self.id_predictor(h)
