@@ -266,7 +266,7 @@ def make_convolutional_sample(batch, model, mode="vanilla", custom_steps=None, e
             sample = intermediates['pred_x0'][-1]
 
     x_sample = model.decode_first_stage(sample)
-    print(f'\ndecode_first_stage: {x_sample.shape}')
+    print(f'\nx_sample: {x_sample}')
 
     try:
         x_sample_noquant = model.decode_first_stage(sample, force_not_quantize=True)
