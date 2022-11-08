@@ -9,13 +9,13 @@ from notebook_helpers import get_model
 model = get_model('superresolution')
 # print('model: ', model)
 
-custom_steps = 100
+custom_steps = 10
 # logs = run(model["model"], 'data/example_conditioning/superresolution/celeb64.png', 'superresolution', custom_steps)
 logs = run(model["model"], '/content/cao.png', 'superresolution', custom_steps)
 # logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
 
 sample = logs["sample"]
-print('sample: ', sample)
+# print('sample: ', sample)
 sample = sample.detach().cpu()
 sample = torch.clamp(sample, -1., 1.)
 sample = (sample + 1.) / 2. * 255

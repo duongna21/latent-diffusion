@@ -156,6 +156,7 @@ class DDIMSampler(object):
                                       unconditional_guidance_scale=unconditional_guidance_scale,
                                       unconditional_conditioning=unconditional_conditioning)
             img, pred_x0 = outs
+            # print(f'\nimg:{img.shape}')
             if callback: callback(i)
             if img_callback: img_callback(pred_x0, i)
             # if i==2:
@@ -164,7 +165,7 @@ class DDIMSampler(object):
             if index % log_every_t == 0 or index == total_steps - 1:
                 intermediates['x_inter'].append(img)
                 intermediates['pred_x0'].append(pred_x0)
-        print(f'\nz_0: {img}')
+        # print(f'\nz_0: {img}')
         torch.save(img, 'z0.pt')
 
         return img, intermediates
@@ -213,5 +214,5 @@ class DDIMSampler(object):
         if noise_dropout > 0.:
             noise = torch.nn.functional.dropout(noise, p=noise_dropout)
         x_prev = a_prev.sqrt() * pred_x0 + dir_xt + noise
-        # print(f'prev_sample: {x_prev}')
+        print(f'prev_sample: {x_prev.shape}')
         return x_prev, pred_x0
