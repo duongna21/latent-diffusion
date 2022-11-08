@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="117d6818-8272-4456-bc10-10edd923554f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ldm/models/diffusion/ddim.py" beforeDir="false" afterPath="$PROJECT_DIR$/ldm/models/diffusion/ddim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebook_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sr.py" beforeDir="false" afterPath="$PROJECT_DIR$/sr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ldm/models/diffusion/ddpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ldm/models/diffusion/ddpm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,7 @@
       <workItem from="1667260093568" duration="1609000" />
       <workItem from="1667261728386" duration="494000" />
       <workItem from="1667262241423" duration="45267000" />
-      <workItem from="1667901176671" duration="3690000" />
+      <workItem from="1667901176671" duration="4050000" />
     </task>
     <servers />
   </component>
