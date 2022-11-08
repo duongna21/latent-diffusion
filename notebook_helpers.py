@@ -152,7 +152,7 @@ def run(model, selected_path, task, custom_steps, resize_enabled=False, classifi
     custom_shape = None
 
     height, width = example["image"].shape[1:3]
-    split_input = height > 128 and width > 128
+    split_input = height > 256 and width > 256
 
     if split_input:
         ks = 128

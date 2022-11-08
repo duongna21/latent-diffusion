@@ -729,23 +729,23 @@ class UNetModel(nn.Module):
         if self.num_classes is not None:
             assert y.shape == (x.shape[0],)
             emb = emb + self.label_emb(y)
-        # print(f'\nemb: {emb[:5]}')
+        print(f'\nemb: {emb.shape}')
 
         h = x.type(self.dtype)
-        # print(f'\ninput: {h[0][0][0][:5]}')
+        print(f'\ninput: {h.shape}')
         for module in self.input_blocks:
             h = module(h, emb, context)
             hs.append(h)
-        # print(f'\nafter_downblock: {h[0][0][0][:5]}')
+        print(f'\nafter_downblock: {h.shape}')
         h = self.middle_block(h, emb, context)
-        # print(f'\nafter_midblock: {h[0][0][0][:5]}')
+        print(f'\nafter_midblock: {h.shape}')
         for module in self.output_blocks:
             h = th.cat([h, hs.pop()], dim=1)
             h = module(h, emb, context)
-        # print(f'\nafter_upblock: {h[0][0][0][:5]}')
+        print(f'\nafter_upblock: {h.shape}')
         h = h.type(x.dtype)
         out = self.out(h)
-        # print(f'\nafter_convout: {out[0][0][0][:5]}')
+        print(f'\nafter_convout: {h.shape}')
         # print(f'unet output: {out.shape}')
         if self.predict_codebook_ids:
             return self.id_predictor(h)
