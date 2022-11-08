@@ -894,6 +894,7 @@ class LatentDiffusion(DDPM):
         return [rescale_bbox(b) for b in bboxes]
 
     def apply_model(self, x_noisy, t, cond, return_ids=False):
+        print(f'\nx noisy, cond: {x_noisy.shape}, {cond.shape}')
 
         if isinstance(cond, dict):
             # hybrid case, cond is exptected to be a dict
