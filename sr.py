@@ -11,7 +11,7 @@ model = get_model('superresolution')
 
 custom_steps = 100
 # logs = run(model["model"], 'data/example_conditioning/superresolution/celeb64.png', 'superresolution', custom_steps)
-logs = run(model["model"], '/content/caonho.jpg', 'superresolution', custom_steps)
+logs = run(model["model"], '/content/caonhoreal.jpg', 'superresolution', custom_steps)
 # logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
 
 sample = logs["sample"]
