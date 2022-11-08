@@ -11,7 +11,7 @@ model = get_model('superresolution')
 
 custom_steps = 100
 # logs = run(model["model"], 'data/example_conditioning/superresolution/celeb64.png', 'superresolution', custom_steps)
-logs = run(model["model"], 'data/example_conditioning/superresolution/celeb128.jpg', 'superresolution', custom_steps)
+logs = run(model["model"], '/content/celeb128.jpg', 'superresolution', custom_steps)
 # logs = run(model["model"], 'data/example_conditioning/superresolution/sample_0.jpg', 'superresolution', custom_steps)
 
 sample = logs["sample"]
@@ -24,3 +24,5 @@ sample = np.transpose(sample, (0, 2, 3, 1))
 print(sample.shape)
 a = Image.fromarray(sample[0])
 a.save('super.jpg')
+
+

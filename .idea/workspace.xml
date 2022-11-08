@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="117d6818-8272-4456-bc10-10edd923554f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sr.py" beforeDir="false" afterPath="$PROJECT_DIR$/sr.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,8 @@
       <workItem from="1667204477607" duration="9977000" />
       <workItem from="1667260093568" duration="1609000" />
       <workItem from="1667261728386" duration="494000" />
-      <workItem from="1667262241423" duration="42862000" />
+      <workItem from="1667262241423" duration="45267000" />
+      <workItem from="1667901176671" duration="1049000" />
     </task>
     <servers />
   </component>
@@ -49,10 +51,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="219" width="597" height="550" key="find.popup" timestamp="1667465860964">
+    <state x="421" y="219" width="597" height="550" key="find.popup" timestamp="1667901325268">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="421" y="219" width="597" height="550" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1667465860964" />
+    <state x="421" y="219" width="597" height="550" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1667901325268" />
     <state x="385" y="217" width="670" height="676" key="search.everywhere.popup" timestamp="1667345921042">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
