@@ -181,7 +181,7 @@ class DDIMSampler(object):
             # print(f'\nlatents: {x}')
             # print(f'\nt: {t}')
             # print(f'\nc: {c}')
-            # print(f'\ne_t: {e_t}')
+            print(f'\ne_t: {e_t.shape}')
 
         else:
             x_in = torch.cat([x] * 2)
